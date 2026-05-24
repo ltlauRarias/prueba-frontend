@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
+/* Variables de colores del diseño*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --azul-1: #00249C;      /* Azul principal */
+  --azul-2: #40CEE4;      /* Azul secundario */
+  --gris: #C5C5C5;        /* Gris textos secundarios */
+  --rojo-1: #C6007E;      /* Rosa principal */
+  --rojo-2: #E280BE;      /* Rosa secundario */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Estilos base del body */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
+  background-color: #ffffff;
+  color: #333333;
 }
+
+/* Clase utilitaria para el color azul principal */
+.text-azul-1 { color: var(--azul-1); }
+.text-azul-2 { color: var(--azul-2); }
+.text-rojo-1 { color: var(--rojo-1); }
+.text-rojo-2 { color: var(--rojo-2); }
+
+/* Clases para fondos */
+.bg-azul-1 { background-color: var(--azul-1); }
+.bg-azul-2 { background-color: var(--azul-2); }
+.bg-rojo-1 { background-color: var(--rojo-1); }
