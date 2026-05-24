@@ -276,7 +276,12 @@ export default function DashboardPage() {
                             <div className="flex gap-2 justify-end">
                                 
                         {/* Icono editar, cambia si la fila esta seleccionada */}
-                        <button onClick={(e) => { e.stopPropagation(); handleEditClick(vehicle); }}>
+                        <button onClick={(e) => { 
+                            e.stopPropagation(); 
+                            setSelectedId(vehicle.id);
+                            handleEditClick(vehicle); 
+                        }}>
+
                             <Image
                             src={selectedId === vehicle.id ? "/Assets/Icon_editar1.svg" : "/Assets/Icon_editar.svg"}
                             alt="editar"
@@ -285,8 +290,13 @@ export default function DashboardPage() {
                             />
                         </button>
                         
-                        {/* Icono eliminar, cambia si la fila está seleccionada */}
-                        <button onClick={(e) => { e.stopPropagation(); handleDelete(vehicle.id); }}>
+                        {/* Icono eliminar, cambia si la fila esta seleccionada */}
+                        <button onClick={(e) => { 
+                            e.stopPropagation(); 
+                            setSelectedId(vehicle.id);
+                            handleDelete(vehicle.id); 
+                        }}>
+                            
                             <Image
                             src={selectedId === vehicle.id ? "/Assets/Icon_eliminar1.svg" : "/Assets/Icon_eliminar.svg"}
                             alt="eliminar"
