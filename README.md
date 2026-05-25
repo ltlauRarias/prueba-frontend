@@ -1,4 +1,4 @@
-# Monitoring Innovation — Prueba Tecnica Full Stack by Laura Reyes Arias
+# Monitoring Innovation - Prueba Tecnica Full Stack by Laura Reyes Arias
 
 Sistema de gestion de vehiculos para un concesionario hipotetico. 
 Permite ver, crear, editar y eliminar vehiculos con control de acceso por roles.
