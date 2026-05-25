@@ -1,9 +1,11 @@
+// Prueba Tecnica - Laura Reyes Arias
+
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-// Aspecto de la nformación del usuario guardada
+// Aspecto de la información del usuario guardada
 interface User {
   username: string;
   role: string; // "admin" o "viewer"
@@ -18,12 +20,14 @@ interface AuthContextType {
   isAdmin: boolean;         // true si el usuario es admin
 }
 
+// Crea una caja global de contexto
 const AuthContext = createContext<AuthContextType | null>(null);
 
+// Crea el proveedor de la web
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(null);
-  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null); // Guarda el nombre y rol del usuario logueado
+  const [token, setToken] = useState<string | null>(null); // Estado del token
+  const router = useRouter(); // Inicializa el router
 
   // Revisa tokens al iniciar la app
   useEffect(() => {
@@ -72,10 +76,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Crea un hook personalizado
 export function useAuth() {
-  const context = useContext(AuthContext);
+  const context = useContext(AuthContext); // Lee el contenido de la cajita global
   if (!context) {
-    throw new Error("UseAuth debe usarse dentro de AuthProvider");
+    throw new Error("useAuth debe usarse dentro de AuthProvider");
   }
   return context;
 }

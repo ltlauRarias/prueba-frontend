@@ -1,11 +1,13 @@
+// Prueba Tecnica - Laura Reyes Arias
+
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "../context/AuthContext";
-import Image from "next/image";
-import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react"; // Guarda valores que cambian / Ejecuta codigo cuando el componente carga o cambia
+import { useRouter } from "next/navigation"; // Para que el user se pueda redirigir a otras paginas
+import { useAuth } from "../context/AuthContext"; // Accede al contexto de autenticacion
+import Image from "next/image"; // Mostrar imagenes (Comprimidas mas rapido que img)
+import axios from "axios"; // Peticiones HTTP al backend (GET, POST, PUT, DELETE)
+import { motion, AnimatePresence } from "framer-motion"; // Para animar cualquier elemento HTML / Para animar si algo desaparece
 
 // URL del backend en Render
 const API_URL = "https://prueba-backend-3lgp.onrender.com";
@@ -39,7 +41,7 @@ export default function DashboardPage() {
     }
   }, [token]);
 
-  // Todos los vehículos del backend
+  // Todos los vehiculos del backend
   const fetchVehicles = async () => {
     try {
       const response = await axios.get(`${API_URL}/api/vehicles/`, {
